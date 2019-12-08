@@ -93,3 +93,22 @@ Core: Cortex-M4F
 Core: Cortex-M4F
 
 ```
+
+
+### Memory Mapped Registers
+
+These are random notes from this page: https://rust-embedded.github.io/book/start/registers.html
+
+Types of crates for hardware in rust:
+ - Micro-architecture Crate
+
+Handles any useful routines common to the processor core a mcu uses, as well as any peripherals that are common to all mcus that use that particular core. The cortex-m crate gives functions to enable and disable interrupts. Also gives access to SysTick peripheral included with Cortex-M based mcus.
+
+ - Peripheral Access Crate (PAC)
+"Sort of" is a thin wrapper over various memory-wrapped registers defined for the specific mcu in use. These crates interact directly with registers. 
+
+ - Hardware Abstraction Layer (HAL) Crate
+These crates offer a HAL... This might be where a SPI struct is defined, or where a USART struct is defined. The point of HALs is to create more accessible and portable code. The problem with HALs in embedded is they are almost impossible to get right. Different mcus are structured differently and hardware becomes extremely difficult to abstract for portable code that works. I will be experimenting with various available HALs and attempting to implement my own to see how it goes. With any luck, the available rust HALs will fill the void and all will be well.
+
+ - Board Crate
+I'm going to start off by saying I hate readily available BSPs (Board Support Packages), which is essentially the equivalent of a Board Crate in rust. The problem with these packages is that they almost always require non-portable code, and a bunch of stuff needs to be redone between projects. Sure, they're more accessible, but they encourage writing non-portable code and they're usually nailed down to a specific manufacturer or mcu family. I don't like these. I will do my best to avoid them.
