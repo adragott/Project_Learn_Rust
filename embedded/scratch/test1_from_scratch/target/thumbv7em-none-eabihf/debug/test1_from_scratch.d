@@ -1,0 +1,1 @@
+/shared/Documents/Projects/project_learning_rust/embedded/scratch/test1_from_scratch/target/thumbv7em-none-eabihf/debug/test1_from_scratch: /shared/Documents/Projects/project_learning_rust/embedded/scratch/test1_from_scratch/src/main.rs

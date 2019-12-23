@@ -112,3 +112,16 @@ These crates offer a HAL... This might be where a SPI struct is defined, or wher
 
  - Board Crate
 I'm going to start off by saying I hate readily available BSPs (Board Support Packages), which is essentially the equivalent of a Board Crate in rust. The problem with these packages is that they almost always require non-portable code, and a bunch of stuff needs to be redone between projects. Sure, they're more accessible, but they encourage writing non-portable code and they're usually nailed down to a specific manufacturer or mcu family. I don't like these. I will do my best to avoid them.
+
+
+# Generating a Project -- No Bullshit
+
+The thing the rust book fails to do is train a developer on how to USE the wonderful tools they've provided. They give great pre-generated examples. Let's actually make a project and push it to a board from scratch. I'm going to use the stm32l432kc (nucleo 32) for this part.
+
+Make sure you've installed everything.
+
+## INSTALLATION SECTION
+
+ -- empty for now
+
+## Make a project
